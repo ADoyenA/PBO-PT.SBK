@@ -217,5 +217,6 @@
     <string name="donate_exception">Sorry, can not do this!</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_user">UserActivity</string>
+    <string name="title_activity_register">Register</string>
 
 </resources>

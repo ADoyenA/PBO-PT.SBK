@@ -18,7 +18,7 @@ private ImageView iv ;
         iv = (ImageView) findViewById(R.id.iv);
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
         iv.startAnimation(myanim);
-        final Intent i = new Intent(this,Login.class);
+        final Intent i = new Intent(this,Register.class);
         Thread timer = new Thread() {
             public void run() {
                 try {

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:layout_marginRight="40dp">
 
             <EditText
-                android:id="@+id/emailinput"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorWhite"
@@ -38,14 +38,28 @@
                 android:textSize="17sp" />
 
             <EditText
-                android:id="@+id/passwordinput"
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/emailinput"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="55dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
                 android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/cpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/passwordinput"
+                android:layout_marginTop="100dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:hint="Confirm Password"
                 android:inputType="textPassword"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
@@ -60,18 +74,26 @@
             android:src="@drawable/applogo" />
 
         <Button
-            android:id="@+id/btSignIn"
+            android:id="@+id/btSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="420dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/button_red"
+            android:text="Register"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btHaveAcc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="480dp"
             android:layout_marginRight="40dp"
             android:background="@drawable/button_white"
-            android:text="Login"
+            android:text="Saya sudah mempunyai akun"
             android:textColor="@color/colorPrimary" />
-
-
-
 
 
     </RelativeLayout>

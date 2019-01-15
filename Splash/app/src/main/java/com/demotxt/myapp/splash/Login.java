@@ -1,9 +1,11 @@
 package com.demotxt.myapp.splash;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,69 +14,61 @@ import java.util.List;
 
 public class Login extends AppCompatActivity {
 
-    private Button btSignIn;
-    private Button btSignUp;
-    private EditText edtEmail;
-    private EditText edtPassword;
+    Button btLogin;
+    EditText edtEmail,edtPassword;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        db = new DatabaseHelper(this);
+        edtEmail = (EditText) findViewById(R.id.emailinput);
+        edtPassword = (EditText) findViewById(R.id.passwordinput);
+        btLogin = (Button) findViewById(R.id.btSignIn);
 
 
-        btSignIn = findViewById(R.id.btSignIn);
-        btSignUp = findViewById(R.id.btSignUp);
-
-        edtEmail = findViewById(R.id.emailinput);
-        edtPassword = findViewById(R.id.passwordinput);
-
-        final DatabaseHelper dbHelper = new DatabaseHelper(this);
-
-        btSignUp.setOnClickListener(new View.OnClickListener() {
+        btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!emptyValidation()) {
-                    dbHelper.addUser(new User(edtEmail.getText().toString(), edtPassword.getText().toString()));
-                    Toast.makeText(Login.this, "Added User", Toast.LENGTH_SHORT).show();
-                    edtEmail.setText("");
-                    edtPassword.setText("");
-                }else{
-                    Toast.makeText(Login.this, "Enter E-Mail/Password above", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        btSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!emptyValidation()) {
-                    User user = dbHelper.queryUser(edtEmail.getText().toString(), edtPassword.getText().toString());
-                    if (user != null) {
-                        Bundle mBundle = new Bundle();
-                        mBundle.putString("user", user.getEmail());
-                        Intent intent = new Intent(Login.this, MainActivity.class);
-                        intent.putExtras(mBundle);
-                        startActivity(intent);
-                        Toast.makeText(Login.this, "Welcome " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                String email = edtEmail.getText().toString();
+                String password = edtPassword.getText().toString();
+                Boolean Chkemailpass = db.emailpassword(email,password);
+                if (Chkemailpass==true) {
+                    if (Chkemailpass != null) {
+                        Intent i = new Intent(Login.this, MainActivity.class);
+                        startActivity(i);
                     } else {
-                        Toast.makeText(Login.this, "User not found", Toast.LENGTH_SHORT).show();
-                        edtPassword.setText("");
+                        Toast.makeText(getApplicationContext(), "Try Again", Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(Login.this, "Empty Fields", Toast.LENGTH_SHORT).show();
-                }
+                    Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
+                }else
+                    Toast.makeText(getApplicationContext(), "Wrong email or password", Toast.LENGTH_SHORT).show();
+
             }
         });
-
 
     }
 
-    private boolean emptyValidation() {
-        if (TextUtils.isEmpty(edtEmail.getText().toString()) || TextUtils.isEmpty(edtPassword.getText().toString())) {
-            return true;
-        }else {
-            return false;
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
         }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }
 

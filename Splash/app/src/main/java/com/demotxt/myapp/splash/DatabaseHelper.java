@@ -14,52 +14,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(Context context) {
-        super(context, DatabaseOptions.DB_NAME, null, DatabaseOptions.DB_VERSION);
+        super(context, "Login.db", null,1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Create table
-        db.execSQL(DatabaseOptions.CREATE_USERS_TABLE_);
+        db.execSQL("Create table user(email text primary key,password text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + DatabaseOptions.USERS_TABLE);
-        // Create tables again
-        onCreate(db);
+        db.execSQL("drop table if exists user");
     }
 
-    public User queryUser(String email, String password) {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        User user = null;
-
-        Cursor cursor = db.query(DatabaseOptions.USERS_TABLE, new String[]{DatabaseOptions.ID,
-                        DatabaseOptions.EMAIL, DatabaseOptions.PASSWORD}, DatabaseOptions.EMAIL + "=? and " + DatabaseOptions.PASSWORD + "=?",
-                new String[]{email, password}, null, null, null, "1");
-        if (cursor != null)
-            cursor.moveToFirst();
-        if (cursor != null && cursor.getCount() > 0) {
-            user = new User(cursor.getString(1), cursor.getString(2));
-        }
-        // return user
-        return user;
-    }
-
-    public void addUser(User user) {
+    //inserting in database
+    public boolean insert(String email,String password){
         SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(DatabaseOptions.EMAIL, user.getEmail());
-        values.put(DatabaseOptions.PASSWORD, user.getPassword());
-
-        // Inserting Row
-        db.insert(DatabaseOptions.USERS_TABLE, null, values);
-        db.close(); // Closing database connection
-
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email",email);
+        contentValues.put("password",password);
+        long ins = db.insert("user",null,contentValues);
+        if (ins==-1) return false;
+        else return true;
     }
-
+    //checking if email exists;
+    public boolean chkemail(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from user where email=?",new String[]{email});
+        if (cursor.getCount()>0) return false;
+        else return true;
+    }
+    // checking the email and password
+    public Boolean emailpassword(String email, String password){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from user where email=? and password=?", new String[]{email,password});
+        if (cursor.getCount()>0) return true;
+        else return false;
+    }
 }
 
