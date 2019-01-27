@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_item_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:layout_marginBottom="10dp"
+    card_view:cardElevation="@dimen/cardview_default_elevation"
+    card_view:cardBackgroundColor="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="25dp"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentTop="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/nama"
+            />
+
+        <TextView
+            android:id="@+id/kusen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_deep"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/tanggal"
+            />
+        <TextView
+            android:id="@+id/stok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_deep"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/jenisKayu"
+            />
+        <TextView
+            android:id="@+id/alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_deep"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/stok"
+            />
+        <TextView
+            android:id="@+id/jenisKayu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_deep"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/kusen"
+            />
+        <TextView
+            android:id="@+id/telp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_deep"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/alamat"
+            />
+        <TextView
+            android:id="@+id/harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_deep"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/telp"
+            />
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

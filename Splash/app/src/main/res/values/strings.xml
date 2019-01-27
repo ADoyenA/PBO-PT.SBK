@@ -219,4 +219,52 @@
     <string name="title_activity_user">UserActivity</string>
     <string name="title_activity_register">Register</string>
 
+    <!-- String Activity Pemesanan -->
+    <string name="button_save">Save</string>
+
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+
+    <string name="hint_nama">Nama Lengkap</string>
+
+    <string name="hint_tanggal">Tanggal</string>
+
+    <string name="hint_kusen">Kusen</string>
+
+    <string name="hint_stok">Jumlah kusen di pesan</string>
+
+    <string name="hint_alamat">Alamat</string>
+
+    <string name="hint_telp">No Telpon</string>
+
+    <string name="hint_jenisKayu">Jenis Kayu</string>
+
+    <string name="hint_harga">Total Harga</string>
+
+    <string name="hint_nbarang">Nama Kusen</string>
+
+    <string name="hint_stokb">Stok</string>
+
+
+    <string name="nama">Nama</string>
+
+    <string name="tanggal">Tanggal Pesan</string>
+
+    <string name="kusen">Jenis Kusen</string>
+
+    <string name="stok">Jumlah Kayu</string>
+
+    <string name="alamat">Alamat</string>
+
+    <string name="jenisKayu">Jenis Kayu</string>
+
+    <string name="telp">NO Telpon</string>
+
+    <string name="harga">Total Harga</string>
+
+    <string name="nbarang">Nama Kusen</string>
+
+    <string name="stokb">Stok</string>
+
+    <string name="jkayu">Jenis Kayu</string>
+
 </resources>

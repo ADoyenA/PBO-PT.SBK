@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundfragment"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_margin"
+            tools:context=".EmployeeEditor">
+
+            <!-- Overview category -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!-- Nama -->
+                <TextView
+                    android:text="@string/nama"
+                    android:textColor="@color/gray_deep"
+                    style="@style/CategoryStyle" />
+
+                <!-- Input fields -->
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingLeft="4dp"
+                    android:orientation="vertical">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_nama"
+                        android:hint="@string/hint_nama"
+                        android:inputType="textCapWords"
+                        android:textColorHint="@color/gray_light"
+                        android:textColor="@color/gray_deep"
+                        android:backgroundTint="@color/gray_deep"
+                        style="@style/EditorFieldStyle" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        <!--tanggal -->
+        <LinearLayout
+            android:id="@+id/tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/tanggal"
+                android:textColor="@color/gray_deep"
+                style="@style/CategoryStyle" />
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="4dp"
+                android:orientation="vertical">
+
+                <!-- Name field -->
+                <EditText
+                    android:id="@+id/edit_tanggal"
+                    android:hint="@string/hint_tanggal"
+                    android:inputType="date"
+                    android:textColorHint="@color/gray_light"
+                    android:textColor="@color/gray_deep"
+                    android:backgroundTint="@color/gray_deep"
+                    style="@style/EditorFieldStyle" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+            <!-- kusen -->
+            <LinearLayout
+                android:id="@+id/kusen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/kusen"
+                    android:textColor="@color/gray_deep"
+                    style="@style/CategoryStyle" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingLeft="4dp"
+                    android:orientation="vertical">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_kusen"
+                        android:hint="@string/hint_kusen"
+                        android:inputType="textCapWords"
+                        android:textColorHint="@color/gray_light"
+                        android:textColor="@color/gray_deep"
+                        android:backgroundTint="@color/gray_deep"
+                        style="@style/EditorFieldStyle" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- stok/ jumlah kusen di pesan -->
+            <LinearLayout
+                android:id="@+id/stok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/stok"
+                    android:textColor="@color/gray_deep"
+                    style="@style/CategoryStyle" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingLeft="4dp"
+                    android:orientation="vertical">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_stok"
+                        android:hint="@string/hint_stok"
+                        android:textColorHint="@color/gray_light"
+                        android:textColor="@color/gray_deep"
+                        android:backgroundTint="@color/gray_deep"
+                        android:inputType="number"
+                        style="@style/EditorFieldStyle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- alamat -->
+            <LinearLayout
+                android:id="@+id/alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/alamat"
+                    android:textColor="@color/gray_deep"
+                    style="@style/CategoryStyle" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingLeft="4dp"
+                    android:orientation="vertical">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_alamat"
+                        android:hint="@string/hint_alamat"
+                        android:inputType="textCapWords"
+                        android:textColorHint="@color/gray_light"
+                        android:textColor="@color/gray_deep"
+                        android:backgroundTint="@color/gray_deep"
+                        style="@style/EditorFieldStyle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- No Telpon -->
+            <LinearLayout
+                android:id="@+id/telp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/telp"
+                    android:textColor="@color/gray_deep"
+                    style="@style/CategoryStyle" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingLeft="4dp"
+                    android:orientation="vertical">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_telp"
+                        android:hint="@string/hint_telp"
+                        android:inputType="number"
+                        android:textColorHint="@color/gray_light"
+                        android:textColor="@color/gray_deep"
+                        android:backgroundTint="@color/gray_deep"
+                        style="@style/EditorFieldStyle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Jenis Kayu -->
+            <LinearLayout
+                android:id="@+id/jenisKayu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/jenisKayu"
+                    android:textColor="@color/gray_deep"
+                    style="@style/CategoryStyle" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingLeft="4dp"
+                    android:orientation="vertical">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_jenisKayu"
+                        android:hint="@string/hint_jenisKayu"
+                        android:inputType="textCapWords"
+                        android:textColorHint="@color/gray_light"
+                        android:textColor="@color/gray_deep"
+                        android:backgroundTint="@color/gray_deep"
+                        style="@style/EditorFieldStyle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- harga -->
+            <LinearLayout
+                android:id="@+id/harga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/harga"
+                    android:textColor="@color/gray_deep"
+                    style="@style/CategoryStyle" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingLeft="4dp"
+                    android:orientation="vertical">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_harga"
+                        android:hint="@string/hint_harga"
+                        android:inputType="number"
+                        android:textColorHint="@color/gray_light"
+                        android:textColor="@color/gray_deep"
+                        android:backgroundTint="@color/gray_deep"
+                        style="@style/EditorFieldStyle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="match_parent"
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="@string/button_save"
+                android:textColor="@color/colorWhite" />
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
